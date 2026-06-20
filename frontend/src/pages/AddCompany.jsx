@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+const BASE_URL = 'https://placement-portal-humi.onrender.com'
 function AddCompany() {
   const [formData, setFormData] = useState({
     companyName: "",
@@ -19,7 +19,7 @@ function AddCompany() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/add-company", {
+      const response = await fetch(`${BASE_URL}/add-company`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

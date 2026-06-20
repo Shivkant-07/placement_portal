@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate,Link } from "react-router-dom";
+const BASE_URL = 'https://placement-portal-humi.onrender.com'
 
 function Login() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch(`${BASE_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

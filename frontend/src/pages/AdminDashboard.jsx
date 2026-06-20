@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
-
+const BASE_URL = 'https://placement-portal-humi.onrender.com'
 function AdminDashboard() {
   const [groupedData, setGroupedData] = useState({});
   const [expandedCompany, setExpandedCompany] = useState(null);
@@ -16,7 +16,7 @@ function AdminDashboard() {
   const getApplications = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/all-applications", { credentials: "include" });
+      const response = await fetch(`${BASE_URL}/all-applications`, { credentials: "include" });
       const data = await response.json();
       if (data.success) {
         const grouped = data.applications.reduce((acc, app) => {

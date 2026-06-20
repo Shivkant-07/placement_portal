@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+const BASE_URL = 'https://placement-portal-humi.onrender.com'
 function Navbar() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ function Navbar() {
 
   const getProfile = async () => {
     try {
-      const response = await fetch("http://localhost:5000/profile", { credentials: "include" });
+      const response = await fetch(`${BASE_URL}/profile`, { credentials: "include" });
       const data = await response.json();
       if (data.success) setUser(data.user);
     } catch (error) { console.log(error); }
@@ -19,7 +19,7 @@ function Navbar() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:5000/logout", { credentials: "include" });
+      const response = await fetch(`${BASE_URL}/logout`, { credentials: "include" });
       const data = await response.json();
       alert(data.message);
       if (data.success) navigate("/");

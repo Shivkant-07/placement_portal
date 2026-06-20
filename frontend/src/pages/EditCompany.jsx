@@ -13,6 +13,7 @@ from "react-router-dom"
 
 import Navbar
 from "../components/Navbar"
+const BASE_URL = 'https://placement-portal-humi.onrender.com'
 
 function EditCompany() {
 
@@ -47,7 +48,7 @@ function EditCompany() {
 
                 const response =
                     await fetch(
-                        "http://localhost:5000/companies",
+                        `${BASE_URL}/companies`,
                         {
                             credentials:
                                 "include"

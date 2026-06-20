@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+const BASE_URL = 'https://placement-portal-humi.onrender.com'
 function Profile() {
   const [formData, setFormData] = useState({
     phone: "",
@@ -20,7 +20,7 @@ function Profile() {
 
   const getProfile = async () => {
     try {
-      const response = await fetch("http://localhost:5000/profile", { credentials: "include" });
+      const response = await fetch(`${BASE_URL}/profile`, { credentials: "include" });
       const data = await response.json();
       if (data.success) {
         setFormData(data.user);

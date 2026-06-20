@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+const BASE_URL = 'https://placement-portal-humi.onrender.com'
 function MyApplications() {
   const [applications, setApplications] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,7 +12,7 @@ function MyApplications() {
 
   const getMyApplications = async () => {
     try {
-      const response = await fetch("http://localhost:5000/get-application", {
+      const response = await fetch(`${BASE_URL}/get-application`, {
         credentials: "include",
       });
       const data = await response.json();

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Navigate } from "react-router-dom"
-
+const BASE_URL = 'https://placement-portal-humi.onrender.com'
 function AdminProtected({ children }) {
 
     const [loading, setLoading] =
@@ -23,7 +23,7 @@ function AdminProtected({ children }) {
 
                 const response =
                     await fetch(
-                        "http://localhost:5000/profile",
+                        `${BASE_URL}/profile`,
                         {
                             credentials:
                                 "include"

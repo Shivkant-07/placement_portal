@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom"
 import { useEffect, useState } from "react"
+const BASE_URL = 'https://placement-portal-humi.onrender.com'
 
 function ProtectedRoute({ children }) {
 
@@ -18,7 +19,7 @@ function ProtectedRoute({ children }) {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/profile",
+                `${BASE_URL}/profile`,
                 {
                     credentials: "include"
                 }
