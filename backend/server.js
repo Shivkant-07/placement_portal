@@ -3,7 +3,7 @@ import cors from "cors"
 import cookieParser from "cookie-parser"
 import dotenv from "dotenv"
 import connectDB from "./config/db.js"
-import userRoutes from "./route/userroute.js"
+import userRoutes from "./route/Userroute.js"
 dotenv.config()
 import authMiddleware from "./middleware/authMiddleware.js"
 import adminMiddleware from "./middleware/adminMiddleware.js"
