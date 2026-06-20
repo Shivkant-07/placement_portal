@@ -51,7 +51,7 @@ function Dashboard() {
         try {
             setLoading(true)
             const response = await fetch(
-                "http://localhost:5000/companies",
+                `${BASE_URL}/companies`,
                 {
                     credentials: "include"
                 }
@@ -82,7 +82,7 @@ function Dashboard() {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/logout",
+                `${BASE_URL}/logout`,
                 {
                     credentials: "include"
                 }
@@ -109,7 +109,7 @@ function Dashboard() {
 
                 const response =
                     await fetch(
-                        "http://localhost:5000/apply-company",
+                        `${BASE_URL}/apply-company`,
                         {
                             method: "POST",
 
@@ -147,7 +147,7 @@ function Dashboard() {
 
                 const response =
                     await fetch(
-                        "http://localhost:5000/get-application",
+                        `${BASE_URL}/get-application`,
                         {
                             credentials:
                                 "include"
