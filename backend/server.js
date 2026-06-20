@@ -13,10 +13,12 @@ const app = express()
 
 app.use("/upload", express.static( "upload" ))
 
+
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://placement-portal-lyart.vercel.app", 
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
-}))
+}));
 
 app.use(express.json())
 app.use(cookieParser())
